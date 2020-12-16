@@ -2,6 +2,7 @@
 
 set -e
 cd "${PLUGIN_SOURCE}"
+chmod -R u+rw .
 echo "---- list source folder ----"
 ls -al .
 sh -c "flutter build apk ${PLUGIN_ARGS}"

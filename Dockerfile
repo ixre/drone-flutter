@@ -4,8 +4,7 @@ ENV PLUGIN_SOURCE="."
 ENV PLUGIN_ARGS=""
 
 COPY entrypoint.sh /
-RUN chmod -R u+rw . && \
-    flutter upgrade && flutter --version
+RUN flutter upgrade && flutter --version
 
 CMD ["sh","/entrypoint.sh"]
 
