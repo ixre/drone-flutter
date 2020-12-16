@@ -9,9 +9,10 @@ if [ ! "${PLUGIN_CN}" = "true" ];then
 fi
 cd "${PLUGIN_SOURCE}"
 echo "current user $(whoami)"
-chown $(id -u):$(id -g) ./
 echo "---- list source folder ----"
 ls -al .
+
+#chown $(id -u):$(id -g) ./
 sh -c "flutter build apk ${PLUGIN_ARGS}"
 echo "build success."
 
