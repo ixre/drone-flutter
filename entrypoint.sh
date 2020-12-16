@@ -14,7 +14,7 @@ ls -al .
 
 #chown $(id -u):$(id -g) ./
 sh -c "flutter build apk ${PLUGIN_ARGS}"
-echo "build success."
+cd - && echo "build success."
 
 echo "---- list output folder ----"
 ls -al "${PLUGIN_SOURCE}"/build/app/outputs/apk
