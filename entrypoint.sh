@@ -12,6 +12,7 @@ if [ "${PLUGIN_PUB_CACHE}" != "" ];then
   if [[ "${PLUGIN_PUB_CACHE}" = ~^/.* ]];then
     ln -s "${PLUGIN_PUB_CACHE}" "${SDK_ROOT}/.pub-cache"
   else
+    mkdir -p "${PLUGIN_PUB_CACHE}"
     ln -s "$(pwd)/${PLUGIN_PUB_CACHE}" "${SDK_ROOT}/.pub-cache"
   fi
 fi
