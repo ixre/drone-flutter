@@ -8,8 +8,8 @@ if [ ! "${PLUGIN_CN}" = "true" ];then
   export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
 fi
 cd "${PLUGIN_SOURCE}"
-echo "current user $(id -a)"
-sudo chown $(id -u):$(id -g) ./
+echo "current user $(whoami)"
+chown $(id -u):$(id -g) ./
 echo "---- list source folder ----"
 ls -al .
 sh -c "flutter build apk ${PLUGIN_ARGS}"
