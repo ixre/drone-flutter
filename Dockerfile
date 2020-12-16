@@ -5,7 +5,7 @@ ENV PLUGIN_ARGS=""
 ENV PLUGIN_CN=false
 
 COPY entrypoint.sh /
-RUN flutter upgrade && flutter --version
+RUN flutter --version
 
 CMD ["sh","/entrypoint.sh"]
 
