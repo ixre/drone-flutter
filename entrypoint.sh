@@ -9,7 +9,7 @@ if [ "${PLUGIN_CN_NET}" = "true" ];then
 fi
 if [ "${PLUGIN_PUB_CACHE}" != "" ];then
   echo "[ drone-flutter][ info]: use ${REAL_PUB} as flutter pub cache folder..."
-  if [ "${PLUGIN_PUB_CACHE}" == "/*" ];then
+  if [[ "${PLUGIN_PUB_CACHE}" = ~^/.* ]];then
     ln -s "${PLUGIN_PUB_CACHE}" "${SDK_ROOT}/.pub-cache"
   else
     ln -s "$(pwd)/${PLUGIN_PUB_CACHE}" "${SDK_ROOT}/.pub-cache"
