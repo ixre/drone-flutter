@@ -8,13 +8,18 @@ if [ "${PLUGIN_CN_NET}" = "true" ];then
   export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
 fi
 if [ "${PLUGIN_PUB_CACHE}" != "" ];then
-  echo "[ drone-flutter][ info]: use ${REAL_PUB} as flutter pub cache folder..."
   if [[ "${PLUGIN_PUB_CACHE}" = ~^/.* ]];then
-    ln -s "${PLUGIN_PUB_CACHE}" "${SDK_ROOT}/.pub-cache"
-  else
-    mkdir -p "${PLUGIN_PUB_CACHE}"
-    ln -s "$(pwd)/${PLUGIN_PUB_CACHE}" "${SDK_ROOT}/.pub-cache"
+    echo "[ drone-flutter][ warning]: PUB_CACHE must starts with '/', otherwise can not be cached."
   fi
+  echo "[ drone-flutter][ info]: use ${REAL_PUB} as flutter pub cache folder..."
+  export PUB_CACHE="${PLUGIN_PUB_CACHE}"
+
+  #if [[ "${PLUGIN_PUB_CACHE}" = ~^/.* ]];then
+  #  ln -s "${PLUGIN_PUB_CACHE}" "${SDK_ROOT}/.pub-cache"
+  #else
+  #  mkdir -p "${PLUGIN_PUB_CACHE}"
+  #  ln -s "$(pwd)/${PLUGIN_PUB_CACHE}" "${SDK_ROOT}/.pub-cache"
+  #fi
 fi
 
 cd "${PLUGIN_SOURCE}"
