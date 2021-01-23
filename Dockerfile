@@ -8,7 +8,7 @@ ENV PLUGIN_ARGS=""
 USER root
 
 COPY entrypoint.sh /
-RUN flutter upgrade && flutter precache && flutter --version
+RUN flutter upgrade && flutter --version
 
 CMD ["sh","/entrypoint.sh"]
 
