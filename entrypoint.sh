@@ -9,9 +9,9 @@ if [ "${PLUGIN_CN_NET}" = "true" ];then
 fi
 if [ "${PLUGIN_PUB_CACHE}" != "" ];then
   if [[ "${PLUGIN_PUB_CACHE}" = ~^/.* ]];then
-    echo "[ drone-flutter][ warning]: PUB_CACHE must starts with '/', otherwise can not be cached."
+    echo "[ drone-flutter][ warning]: PUB_CACHE must starts with \'/\', otherwise can not be cached."
   fi
-  echo "[ drone-flutter][ info]: use ${REAL_PUB} as flutter pub cache folder..."
+  echo "[ drone-flutter][ info]: use ${PLUGIN_PUB_CACHE} as flutter pub cache folder..."
   export PUB_CACHE="${PLUGIN_PUB_CACHE}"
 
   #if [[ "${PLUGIN_PUB_CACHE}" = ~^/.* ]];then
