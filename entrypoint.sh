@@ -48,7 +48,7 @@ sh -c "${PLUGIN_COMMAND} ${PLUGIN_ARGS}" && cd - > /dev/null
 
 echo "---- list output folder ----"
 if [ "${PLUGIN_DIST_FOLDER}" != "" ];then
-  mkdir "${PLUGIN_DIST_FOLDER}" \
+  mkdir -p "${PLUGIN_DIST_FOLDER}" \
   && mv "${PLUGIN_SOURCE}"/build/app/outputs/apk/release/* "${PLUGIN_DIST_FOLDER}/" \
   && ls -al "${PLUGIN_DIST_FOLDER}/" \
   && echo "[ drone-flutter][ info]: build success! files saved in ${PLUGIN_DIST_FOLDER}."
