@@ -42,10 +42,10 @@ if [ "${PLUGIN_GRADLE_USER_HOME}" != "" ];then
   export GRADLE_USER_HOME="${GRADLE_HOME}"
 fi
 
-cd "${PLUGIN_SOURCE}"
+cd "${PLUGIN_SOURCE}" > /dev/null
 
 sh -c "${PLUGIN_COMMAND} ${PLUGIN_ARGS}"
-cd - && echo "[ drone-flutter][ info]: build success."
+cd - > /dev/null && echo "[ drone-flutter][ info]: build success."
 
 echo "---- list output folder ----"
 ls -al "${PLUGIN_SOURCE}"/build/app/outputs/apk/release
