@@ -56,7 +56,7 @@ steps:
       password:
         from_secret: server_password
       port: 22000
-      source: build/app/outputs/apk/release/app-universal-release.apk
+      source: build/app/outputs/apk/release/app-armeabi-v7a-release.apk
       target: /data/files/app-nightly.apk
       when:
         status: [ success ]
@@ -65,7 +65,7 @@ steps:
   - name: dingding
     image: lddsb/drone-dingtalk-message
     settings:
-      token: eb1aed6eb4676bff328d8da36a7ecbf1a8941c3820aaa4f4c38d36a5e90c3fb7
+      token: eb1aed6eb4676bff328d8da36a7ecbf1a8941c3820aaa4f4c38d36a5e90c3fc7
       type: markdown
 trigger:
   branch:
