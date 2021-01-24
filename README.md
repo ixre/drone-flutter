@@ -2,7 +2,23 @@
 Flutter CI/DI tools for drone
 
 # Usage
+```
+kind: pipeline
+name: default
 
+steps:
+  - name: flutter
+    image: jarry6/drone-flutter
+    settings:
+      cn_net: true
+      source: "."
+      args: "--verbose --split-per-abi --no-tree-shake-icons"
+trigger:
+  branch:
+    - master
+```
+
+# Advance
 ```
 kind: pipeline
 name: default
@@ -15,12 +31,13 @@ steps:
         path: /cache
     settings:
       restore: true
-      mount: ["/.pub_cache"]
+      mount: [".pub_cache",".gradle"]
   - name: flutter
     image: jarry6/drone-flutter
     settings:
       cn_net: true
-      pub_cache: "/.pub_cache"
+      pub_cache: ".pub_cache"
+      gradle_user_home: ".gradle"
       source: "."
       args: "--verbose --split-per-abi --no-tree-shake-icons"
   - name: rebuild-cache
@@ -30,7 +47,7 @@ steps:
         path: /cache
     settings:
       rebuild: true
-      mount: ["/.pub_cache"]
+      mount: [".pub_cache",".gradle"]
   - name: publish
     image: appleboy/drone-scp
     settings:
