@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 set -e
 SDK_ROOT="/home/mobiledevops/.flutter-sdk"
