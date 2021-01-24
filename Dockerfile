@@ -1,4 +1,4 @@
-FROM mobiledevops/flutter-sdk-image:v1.12.13-hotfix.8
+FROM mobiledevops/flutter-sdk-image:1.22.5
 
 ENV PLUGIN_SOURCE="."
 ENV PLUGIN_CN_NET=false
