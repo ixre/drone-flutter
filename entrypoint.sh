@@ -29,17 +29,17 @@ if [ "${PLUGIN_PUB_CACHE}" != "" ];then
   #fi
 fi
 
-if [ "${PLUGIN_GRALE_USER_HOME}" != "" ];then
-  GRADLE_HOME="${PLUGIN_GRALE_USER_HOME}"
-  if [[ "${PLUGIN_GRALE_USER_HOME}" != /* ]];then
-    if [[ "${PLUGIN_GRALE_USER_HOME}" == ./* ]];then
-      GRADLE_HOME="$(pwd)${PLUGIN_GRALE_USER_HOME:1}"
+if [ "${PLUGIN_GRADLE_USER_HOME}" != "" ];then
+  GRADLE_HOME="${PLUGIN_GRADLE_USER_HOME}"
+  if [[ "${PLUGIN_GRADLE_USER_HOME}" != /* ]];then
+    if [[ "${PLUGIN_GRADLE_USER_HOME}" == ./* ]];then
+      GRADLE_HOME="$(pwd)${PLUGIN_GRADLE_USER_HOME:1}"
     else
-      GRADLE_HOME="$(pwd)/${PLUGIN_GRALE_USER_HOME}"
+      GRADLE_HOME="$(pwd)/${PLUGIN_GRADLE_USER_HOME}"
     fi
   fi
   echo "[ drone-flutter][ info]: use ${GRADLE_HOME} as gradle user home folder..."
-  export GRALE_USER_HOME="${GRADLE_HOME}"
+  export GRADLE_USER_HOME="${GRADLE_HOME}"
 fi
 
 cd "${PLUGIN_SOURCE}"
