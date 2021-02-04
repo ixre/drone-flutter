@@ -5,10 +5,10 @@ SDK_ROOT="/home/mobiledevops/.flutter-sdk"
 
 if [ "${PLUGIN_CN_NET}" = "true" ];then
   echo "[ drone-flutter][ info]: used the flutter mirror optimize for china"
-  #export PUB_HOSTED_URL=https://pub.flutter-io.cn
-  #export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
-  export PUB_HOSTED_URL=https://mirrors.sjtug.sjtu.edu.cn/dart-pub
-  export FLUTTER_STORAGE_BASE_URL=https://mirrors.sjtug.sjtu.edu.cn
+  export PUB_HOSTED_URL=https://pub.flutter-io.cn
+  export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
+  #export PUB_HOSTED_URL=https://mirrors.sjtug.sjtu.edu.cn/dart-pub
+  #export FLUTTER_STORAGE_BASE_URL=https://mirrors.sjtug.sjtu.edu.cn
 fi
 
 if [ "${PLUGIN_PUB_CACHE}" != "" ];then
