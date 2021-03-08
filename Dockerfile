@@ -12,5 +12,7 @@ ENV PLUGIN_ARGS=""
 USER root
 
 COPY entrypoint.sh /
+RUN flutter --version
+
 CMD ["bash","/entrypoint.sh"]
 
