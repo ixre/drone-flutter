@@ -1,6 +1,6 @@
-#flutter version: v2.0.1
+#flutter version: v1.22.5
 
-FROM mobiledevops/flutter-sdk-image:2.0.1
+FROM mobiledevops/flutter-sdk-image:1.22.5
 
 ENV PLUGIN_SOURCE="."
 ENV PLUGIN_CN_NET=false
@@ -12,7 +12,5 @@ ENV PLUGIN_ARGS=""
 USER root
 
 COPY entrypoint.sh /
-RUN flutter upgrade && flutter --version
-
 CMD ["bash","/entrypoint.sh"]
 
