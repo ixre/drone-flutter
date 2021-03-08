@@ -1,4 +1,6 @@
-FROM mobiledevops/flutter-sdk-image:1.22.5
+#flutter version: v2.0.1
+
+FROM mobiledevops/flutter-sdk-image:2.0.1
 
 ENV PLUGIN_SOURCE="."
 ENV PLUGIN_CN_NET=false
