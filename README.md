@@ -75,3 +75,4 @@ volumes:
     host:
       path: /tmp/cache
 ```
+If your flutter version is less than v2.0, please use `jarry6/drone-flutter:1`
