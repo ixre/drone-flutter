@@ -3,6 +3,8 @@
 set -e
 SDK_ROOT="/home/mobiledevops/.flutter-sdk"
 
+flutter --version
+
 if [ "${PLUGIN_CN_NET}" = "true" ];then
   echo "[ drone-flutter][ info]: used the flutter mirror optimize for china"
   export PUB_HOSTED_URL=https://pub.flutter-io.cn
