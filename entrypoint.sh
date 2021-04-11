@@ -48,6 +48,7 @@ fi
 
 cd "${PLUGIN_SOURCE}" > /dev/null
 
+flutter clean && flutter pub get
 sh -c "${PLUGIN_COMMAND} ${PLUGIN_ARGS}" && cd - > /dev/null
 
 echo "---- list output folder ----"
