@@ -48,7 +48,8 @@ fi
 
 cd "${PLUGIN_SOURCE}" > /dev/null
 
-flutter clean && flutter pub get
+echo 'cleaning last build cache!' && flutter clean
+
 sh -c "${PLUGIN_COMMAND} ${PLUGIN_ARGS}" && cd - > /dev/null
 
 echo "---- list output folder ----"
