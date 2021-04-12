@@ -3,7 +3,7 @@
 set -e
 SDK_ROOT="/home/mobiledevops/.flutter-sdk"
 
-flutter --version
+flutter doctor
 
 if [ "${PLUGIN_CN_NET}" = "true" ];then
   echo "[ drone-flutter][ info]: used the flutter mirror optimize for china"
@@ -47,8 +47,6 @@ if [ "${PLUGIN_GRADLE_USER_HOME}" != "" ];then
 fi
 
 cd "${PLUGIN_SOURCE}" > /dev/null
-
-echo 'cleaning last build cache!' && flutter clean
 
 sh -c "${PLUGIN_COMMAND} ${PLUGIN_ARGS}" && cd - > /dev/null
 
