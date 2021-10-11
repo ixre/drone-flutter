@@ -4,7 +4,7 @@ set -e
 SDK_ROOT="/home/mobiledevops/.flutter-sdk"
 
 if [ "${VERSION}" != "" ];then
-  cd "${SDK_ROOT}" && git checkout "${VERSION"
+  cd "${SDK_ROOT}" && git checkout "${VERSION}"
   cd - > /dev/null
 fi
 
