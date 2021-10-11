@@ -3,6 +3,10 @@
 set -e
 SDK_ROOT="/home/mobiledevops/.flutter-sdk"
 
+if [ "${VERSION}" != "" ];then
+  flutter version "${VERSION}"
+fi
+
 flutter doctor
 
 if [ "${PLUGIN_CN_NET}" = "true" ];then
