@@ -39,6 +39,7 @@ steps:
       pub_cache: ".pub_cache"
       gradle_user_home: ".gradle"
       source: "."
+      version: "2.2.3"
       args: "--verbose --split-per-abi --no-tree-shake-icons"
   - name: rebuild-cache
     image: drillster/drone-volume-cache
