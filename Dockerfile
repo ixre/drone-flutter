@@ -13,8 +13,7 @@ USER root
 
 COPY entrypoint.sh /
 RUN flutter upgrade \
-    && flutter precache \
-    && flutter doctor
+    && flutter precache
 
 CMD ["bash","/entrypoint.sh"]
 
