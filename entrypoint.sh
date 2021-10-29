@@ -3,8 +3,8 @@
 set -e
 SDK_ROOT="/home/mobiledevops/.flutter-sdk"
 
-if [ "${VERSION}" != "" ];then
-  cd "${SDK_ROOT}" && git checkout "${VERSION}"
+if [ "${PLUGIN_VERSION}" != "" ];then
+  cd "${SDK_ROOT}" && git checkout "${PLUGIN_VERSION}"
   cd - > /dev/null
 fi
 
