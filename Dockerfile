@@ -12,8 +12,7 @@ ENV PLUGIN_ARGS=""
 USER root
 
 COPY entrypoint.sh /
-RUN flutter upgrade && ls -a
-RUN rm -rf .git
+RUN flutter upgrade && rm -rf .git
 #    && flutter precache
 
 CMD ["bash","/entrypoint.sh"]
