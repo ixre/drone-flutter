@@ -6,7 +6,7 @@ steps:
     image: plugins/docker
     settings:
       repo: jarry6/drone-flutter
-      tags: latest
+      tags: 2
       username: jarry6
       password:
         from_secret: docker_password
