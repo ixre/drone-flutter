@@ -23,9 +23,10 @@ RUN mkdir $FLUTTER_HOME \
     && curl --fail --remote-time --silent --location -O https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_${FLUTTER_VERSION}-stable.tar.xz \
     && tar xf flutter_linux_${FLUTTER_VERSION}-stable.tar.xz --strip-components=1 \
     && rm flutter_linux_${FLUTTER_VERSION}-stable.tar.xz \ 
-    && flutter upgrade && rm -rf .git \
+    && flutter upgrade \
     && flutter precache \
-    && flutter doctor
+    && flutter doctor \
+    && rm -rf .git
 
 CMD ["bash","/entrypoint.sh"]
 
