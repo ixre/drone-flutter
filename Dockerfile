@@ -25,8 +25,7 @@ RUN mkdir $FLUTTER_HOME \
     && rm flutter_linux_${FLUTTER_VERSION}-stable.tar.xz \ 
     && flutter upgrade \
     && flutter precache \
-    && flutter doctor \
-    && rm -rf .git
+    && flutter doctor
 
 CMD ["bash","/entrypoint.sh"]
 
