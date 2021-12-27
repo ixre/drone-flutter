@@ -11,8 +11,7 @@ ENV PLUGIN_CN_NET=false
 ENV PLUGIN_GRADLE_USER_HOME=".gradle"
 ENV PLUGIN_PUB_CACHE=".pub_cache"
 ENV PLUGIN_DIST_FOLDER="./dist"
-ENV PLUGIN_COMMAND="flutter build apk"
-ENV PLUGIN_ARGS=""
+ENV PLUGIN_COMMANDS="flutter build apk --split-per-abi --no-tree-shake-icons"
 USER root
 
 COPY entrypoint.sh /

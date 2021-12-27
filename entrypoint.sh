@@ -53,7 +53,8 @@ fi
 
 cd "${PLUGIN_SOURCE}" > /dev/null
 
-sh -c "${PLUGIN_COMMAND} ${PLUGIN_ARGS}" && cd - > /dev/null
+#sh -c "${PLUGIN_COMMAND} ${PLUGIN_ARGS}" && cd - > /dev/null
+sh -c "${PLUGIN_COMMANDS}" && cd - > /dev/null
 
 echo "---- list output folder ----"
 if [ "${PLUGIN_DIST_FOLDER}" != "" ];then
@@ -62,7 +63,7 @@ if [ "${PLUGIN_DIST_FOLDER}" != "" ];then
   && ls -al "${PLUGIN_DIST_FOLDER}/" \
   && echo "[ drone-flutter][ info]: build success! files saved in ${PLUGIN_DIST_FOLDER}."
 else
-  ls -al "${PLUGIN_SOURCE}"/build/app/outputs/apk/release/* 
+  ls -al "${PLUGIN_SOURCE}"/build/app/outputs/apk/release/*
 fi
 
 
