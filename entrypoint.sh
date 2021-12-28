@@ -55,9 +55,6 @@ cd "${PLUGIN_SOURCE}" > /dev/null
 
 #sh -c "${PLUGIN_COMMAND} ${PLUGIN_ARGS}" && cd - > /dev/null
 
-echo "[ drone-flutter][ info]: fluter pub get " \
-  && flutter pub get
-
 sh -c "${PLUGIN_COMMANDS}" && cd - > /dev/null
 
 echo "---- list output folder ----"
