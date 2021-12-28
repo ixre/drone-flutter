@@ -8,11 +8,12 @@ name: default
 
 steps:
   - name: flutter
-    image: jarry6/drone-flutter
+    image: jarry6/drone-flutter:2
     settings:
       cn_net: true
       source: "."
-      args: "--verbose --split-per-abi --no-tree-shake-icons"
+      commands: >
+        flutter build apk
 trigger:
   branch:
     - master
@@ -33,14 +34,15 @@ steps:
       restore: true
       mount: [".pub_cache",".gradle"]
   - name: flutter
-    image: jarry6/drone-flutter
+    image: jarry6/drone-flutter:2
     settings:
       cn_net: true
       pub_cache: ".pub_cache"
       gradle_user_home: ".gradle"
       source: "."
       version: "2.2.3"
-      args: "--verbose --split-per-abi --no-tree-shake-icons"
+      commands: >
+        flutter build apk --verbose --split-per-abi --no-tree-shake-icons"
   - name: rebuild-cache
     image: drillster/drone-volume-cache
     volumes:
