@@ -32,12 +32,12 @@ steps:
         path: /cache
     settings:
       restore: true
-      mount: [".pub_cache",".gradle"]
+      mount: [".pub-cache",".gradle"]
   - name: flutter
     image: jarry6/drone-flutter:2
     settings:
       cn_net: true
-      pub_cache: ".pub_cache"
+      pub_cache: ".pub-cache"
       gradle_user_home: ".gradle"
       source: "."
       version: "2.2.3"
@@ -50,7 +50,7 @@ steps:
         path: /cache
     settings:
       rebuild: true
-      mount: [".pub_cache",".gradle"]
+      mount: [".pub-cache",".gradle"]
   - name: publish
     image: appleboy/drone-scp
     settings:
