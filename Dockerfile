@@ -1,15 +1,15 @@
-#flutter version: v2.5.3
+#flutter version: v2.8.1
 
 FROM mobiledevops/android-sdk-image:30.0.3
 
-ENV FLUTTER_VERSION="2.5.3"
+ENV FLUTTER_VERSION="2.8.1"
 ENV FLUTTER_HOME "/home/mobiledevops/.flutter-sdk"
 ENV PATH $PATH:$FLUTTER_HOME/bin
 
 ENV PLUGIN_SOURCE="."
 ENV PLUGIN_CN_NET=false
 ENV PLUGIN_GRADLE_USER_HOME=".gradle"
-ENV PLUGIN_PUB_CACHE=".pub_cache"
+ENV PLUGIN_PUB_CACHE=".pub-cache"
 ENV PLUGIN_DIST_FOLDER="./dist"
 ENV PLUGIN_COMMANDS="flutter build apk --split-per-abi --no-tree-shake-icons"
 USER root
