@@ -22,7 +22,7 @@ RUN mkdir $FLUTTER_HOME \
     && curl --fail --remote-time --silent --location -O https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_${FLUTTER_VERSION}-stable.tar.xz \
     && tar xf flutter_linux_${FLUTTER_VERSION}-stable.tar.xz --strip-components=1 \
     && rm flutter_linux_${FLUTTER_VERSION}-stable.tar.xz \ 
-    && flutter upgrade \
+    && git config --global --add safe.directory /home/mobiledevops/.flutter-sdk \
     && flutter precache \
     && flutter doctor
 
