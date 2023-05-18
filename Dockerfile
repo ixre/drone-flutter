@@ -1,8 +1,8 @@
-#flutter version: v2.8.1
+#flutter version: v3.10.1
 
-FROM mobiledevops/android-sdk-image:30.0.3
+FROM mobiledevops/android-sdk-image:33.0.2
 
-ENV FLUTTER_VERSION="2.8.1"
+ENV FLUTTER_VERSION="3.10.1"
 ENV FLUTTER_HOME "/home/mobiledevops/.flutter-sdk"
 ENV PATH $PATH:$FLUTTER_HOME/bin
 
